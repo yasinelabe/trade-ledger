@@ -1,0 +1,6 @@
+node_modules
+.pnp.*
+.next
+dist
+.vscode
+.DS_Store

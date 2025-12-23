@@ -1,12 +1,8 @@
-if (typeof window !== 'undefined') {
-    throw new Error('Database module cannot be imported in a Client Component');
-}
-
 import Database from 'better-sqlite3';
 import { join, dirname } from 'path';
 import { mkdirSync } from 'fs';
 
-const dbPath = join(process.cwd(), 'data', 'trades.db');
+const dbPath = process.env.DB_PATH || join(process.cwd(), 'data', 'trades.db');
 
 // Ensure the directory exists
 mkdirSync(dirname(dbPath), { recursive: true });
