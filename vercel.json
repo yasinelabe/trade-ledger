@@ -1,7 +1,9 @@
 {
+    "version": 3,
     "functions": {
-        "api/**": {
-            "runtime": "nodejs18.x"
-        }
+      "api/**": {
+        "runtime": "nodejs18"
+      }
     }
-}
+  }
+  
