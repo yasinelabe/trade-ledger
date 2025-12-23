@@ -68,7 +68,7 @@ NEXTAUTH_URL=http://localhost:3000
 ```
 
 # Project Structure
-
+```
 .
 ├─ app/
 │  ├─ layout.tsx           # Root layout with ThemeProvider & Navbar
@@ -97,3 +97,4 @@ NEXTAUTH_URL=http://localhost:3000
 ├─ package.json
 └─ pnpm-lock.yaml
 
+```
