@@ -2,25 +2,76 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e2329;
+  --muted: #717171;
+  --card: #ffffff;
+  --border: #e5e5e5;
+  --radius: 0.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='dark'] {
+  --background: #1e2329;
+  --foreground: #ededed;
+  --muted: #a3a3a3;
+  --card: #1c2127;
+  --border: #363535;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s, color 0.2s;
+}
+
+
+.bg-card {
+  background: var(--card);
+}
+.border-border {
+  border-color: var(--border);
+}
+.text-muted {
+  color: var(--muted);
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--card);
+  color: var(--foreground);
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+
+  /* Remove native styles for consistency */
+  outline: none;
+  appearance: none;
+}
+
+.input:focus {
+  border-color: var(--foreground);
+  box-shadow: 0 0 0 2px rgba(100, 100, 250, 0.2); /* subtle focus ring */
+  background-color: var(--card);
+  color: var(--foreground);
+}
+
+.input::placeholder {
+  color: var(--muted);
+  opacity: 1; /* make placeholder fully visible */
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
